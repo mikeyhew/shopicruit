@@ -1,3 +1,4 @@
+var warning = "WARNING: this code takes at least 30 minutes to run will lock up this browser tab for that time. You should probably press cancel."
 var maxWeight = 100000;
 var log = console.log.bind(console);
 
@@ -58,6 +59,9 @@ $.getJSON(
 		var totalWeight;
 		var subsetIDofMax;
 		var totalWeightOfMax;
+		if (!confirm(warning)) {
+			return;
+		}
 		log('entering brute force area');
 		while (!overflow) {
 			
